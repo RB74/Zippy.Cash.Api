@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zippy.Model
 {
+    /// <summary>
+    /// Account entity
+    /// </summary>
     public class Account:ZippyBase
     {
         [Key]

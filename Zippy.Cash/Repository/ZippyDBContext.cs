@@ -3,7 +3,6 @@ using Zippy.Model;
 
 namespace Zippy.Cash.API.Repository
 {
-
     /// <summary>
     /// Zippy API database context
     /// </summary>
