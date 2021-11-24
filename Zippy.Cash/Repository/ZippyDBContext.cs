@@ -13,7 +13,6 @@ namespace Zippy.Cash.API.Repository
         {
 
         }
-        //public DbSet<ZippyBase> ZippyBases { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Country> Countries { get; set; }
