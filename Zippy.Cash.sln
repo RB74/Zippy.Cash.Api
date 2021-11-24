@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zippy.Cash.API", "Zippy.Cash\Zippy.Cash.API.csproj", "{427DC62B-1675-43BC-9924-31D22B53D8E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1DD3293B-3973-4A49-AB07-1072FAB0E1AE} = {1DD3293B-3973-4A49-AB07-1072FAB0E1AE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zippy.Model", "Zippy.Model\Zippy.Model.csproj", "{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{427DC62B-1675-43BC-9924-31D22B53D8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427DC62B-1675-43BC-9924-31D22B53D8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427DC62B-1675-43BC-9924-31D22B53D8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427DC62B-1675-43BC-9924-31D22B53D8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DA34925-EA4E-4711-9E1F-91E9723BEE76}
+	EndGlobalSection
+EndGlobal
