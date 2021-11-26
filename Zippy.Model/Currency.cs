@@ -3,7 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zippy.Model
 {
-    public class Currency
+    /// <summary>
+    /// Entity represents currency in which transactions are handled
+    /// </summary>
+    public class Currency:ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -13,6 +13,6 @@ namespace Zippy.Model
         public int Id { get; set; }
         public string AccountId { get; set; } = Guid.NewGuid().ToString();
         [ForeignKey("Client")]
-        public int OwnnerId { get; set; }
+        public int OwnerId { get; set; }
     }
 }

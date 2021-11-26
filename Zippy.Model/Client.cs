@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zippy.Model
 {
+    /// <summary>
+    /// Client entity represents Merchant or Person 
+    /// </summary>
     public class Client:ZippyBase
     {
         [Key]
@@ -12,16 +15,16 @@ namespace Zippy.Model
         public int OrganizationId { get; set; }
         public string FirstName { get; set; } = "John";
         public string LastName { get; set; } = "Doe";
-        public string? Email { get; set; }
-        public string UserToken { get; set; } = string.Empty;
-        public string? Phone { get; set; }
-        public string? Website { get; set; }
+        public string Email { get; set; } = String.Empty;
+        public string UserToken { get; set; } = String.Empty;
+        public string Phone { get; set; } = String.Empty;
+        public string Website { get; set; } = String.Empty;
         [ForeignKey("Country")]
         public int CountryId { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
-        public string? TaxID { get; set; }
-        public string? TypeOfBusiness { get; set; }
-        public string? PurposeOfBusiness { get; set; }
+        public string TaxID { get; set; } = String.Empty;
+        public string TypeOfBusiness { get; set; } = String.Empty;
+        public string PurposeOfBusiness { get; set; } = String.Empty;
     }
 }
