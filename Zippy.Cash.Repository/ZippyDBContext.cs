@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Zippy.Model;
 
-namespace Zippy.Cash.API.DAL
+namespace Zippy.Cash.Repository
 {
     /// <summary>
     /// Zippy API database context
@@ -17,6 +17,8 @@ namespace Zippy.Cash.API.DAL
         public DbSet<Country> Countries { get; set; }
         public DbSet<Currency> Currencys { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("Account").HasData( new Account { CreatedOnUTC = DateTime.UtcNow, UpdatedOnUTC = DateTime.UtcNow, AccountId=Guid.NewGuid().ToString(),Id=1, OwnerId=1}) ;

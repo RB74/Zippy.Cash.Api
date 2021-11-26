@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Zippy.Cash.API.Migrations
+namespace Zippy.Cash.Repository.Migrations
 {
     public partial class Initial : Migration
     {

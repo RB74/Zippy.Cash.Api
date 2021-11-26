@@ -30,10 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Zippy.Cash.Repository\Zippy.Cash.Repository.csproj" />
     <ProjectReference Include="..\Zippy.Model\Zippy.Model.csproj" />
   </ItemGroup>
 
