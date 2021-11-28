@@ -6,9 +6,10 @@ using Zippy.Model;
 
 namespace Zippy.Cash.API.Controllers.RegionController
 {
-    [Route("api/[controller]")]
-    [ApiController]
     [Authorize]
+    [ApiController]
+    [ApiVersion("1")]
+    [Route("api/v{apiVersion}/[controller]")]
     public class RegionController : ControllerBase
     {
         private readonly IRegionRepository _regionRepository;
@@ -18,7 +19,6 @@ namespace Zippy.Cash.API.Controllers.RegionController
         }
 
         [HttpGet]
-        [Route("/GetRegions")]
         public async Task<ActionResult<Region>> GetRegions()
         {
            var result = await _regionRepository.GetRegions();

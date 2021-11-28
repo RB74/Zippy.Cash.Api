@@ -13,6 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning(x =>
+    {
+        x.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+        x.AssumeDefaultVersionWhenUnspecified = true;
+        x.ReportApiVersions = true;
+    });
 builder.Services
        .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
        .AddMicrosoftIdentityWebApi(
@@ -44,9 +50,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseApiVersioning();
 app.MapControllers();
 app.Run();
