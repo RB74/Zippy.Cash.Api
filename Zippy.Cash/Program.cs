@@ -1,13 +1,36 @@
+using Azure.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Graph;
+using Microsoft.Identity.Web;
+using System.IdentityModel.Tokens.Jwt;
 using Zippy.Cash.Repository;
 using Zippy.Cash.Repository.Abstract;
 using Zippy.Cash.Repository.Concrete;
+using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
 
 var builder = WebApplication.CreateBuilder(args);
-
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 // Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services
+       .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+       .AddMicrosoftIdentityWebApi(
+            options =>
+            {
+                builder.Configuration.Bind("AzureAdB2C", options);
+                options.TokenValidationParameters.NameClaimType = JwtRegisteredClaimNames.Sub;
+            },
+            options => builder.Configuration.Bind("AzureAdB2C", options))
+       .EnableTokenAcquisitionToCallDownstreamApi(options => { })
+       .AddMicrosoftGraph(
+                authenticationProvider => new GraphServiceClient(new ClientSecretCredential(
+                    tenantId: "d0c1aedf-ff82-46fd-890a-3100c16e14ab",
+                    clientId: "0f2b00c3-dc2e-4ce6-ab2b-f4830c77a432",
+                    clientSecret: "69u7Q~2JZgVzttFwb2gNgIjDnPBuKwCPg1HMo")),
+                new string[] { })
+       .AddInMemoryTokenCaches();
+
 builder.Services.AddDbContext<ZippyDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ZippyDB"), assembly => assembly.MigrationsAssembly(typeof(ZippyDBContext).Assembly.FullName)));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -15,7 +38,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRegionRepository, RegionRepository>();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -24,9 +46,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
