@@ -12,17 +12,6 @@ namespace Zippy.Cash.Repository
         {
 
         }
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Currency> Currencys { get; set; }
-        public DbSet<Organization> Organizations { get; set; }
-        public DbSet<Region> Regions { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<CardDetail> CardDetails { get; set; }
-        public DbSet<FundingSource> FundingSources { get; set; }
-        public DbSet<ProcessingChannel> ProcessingChannels { get; set; }
-        public DbSet<ProcessingChannelType> ProcessingChannelTypes { get; set; }
         public DbSet<Account> Accounts => Set<Account>();
         public DbSet<Client> Clients => Set<Client>();
         public DbSet<Country> Countries => Set<Country>();
@@ -34,6 +23,10 @@ namespace Zippy.Cash.Repository
         public DbSet<UserRole> UserRoles => Set<UserRole>();
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<UserStatus> UserStatuses => Set<UserStatus>();
+        public DbSet<CardDetail> CardDetails => Set<CardDetail>();
+        public DbSet<FundingSource> FundingSources => Set<FundingSource>();
+        public DbSet<ProcessingChannel> ProcessingChannels => Set<ProcessingChannel>();
+        public DbSet<ProcessingChannelType> ProcessingChannelTypes => Set<ProcessingChannelType>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
