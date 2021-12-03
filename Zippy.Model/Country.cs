@@ -13,6 +13,6 @@ namespace Zippy.Model
         public int Id { get; set; }
         public string Name { get; set; } = "United States";
         //Navigation property
-        public ICollection<Region> Regions { get; set; }
+        public ICollection<Region> Regions { get; set; } = new HashSet<Region>();
     }
 }
