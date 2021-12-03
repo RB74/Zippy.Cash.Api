@@ -1,0 +1,12 @@
+version: '3.8'
+   
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Zippy.Cash/Dockerfile
+    image: zippyangular.azurecr.io/zippy-cash-api
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 80:80
