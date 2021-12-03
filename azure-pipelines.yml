@@ -17,6 +17,7 @@ jobs:
   - task: Docker@2
     displayName: Build and Push
     inputs:
+      buildContext: .
       command: buildAndPush
       repository: $(DOCKER_REPOSITORY)
       tags: |
