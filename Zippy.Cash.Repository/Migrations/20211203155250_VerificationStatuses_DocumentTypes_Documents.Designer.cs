@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zippy.Cash.Repository;
 
@@ -11,9 +12,10 @@ using Zippy.Cash.Repository;
 namespace Zippy.Cash.Repository.Migrations
 {
     [DbContext(typeof(ZippyDBContext))]
-    partial class ZippyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211203155250_VerificationStatuses_DocumentTypes_Documents")]
+    partial class VerificationStatuses_DocumentTypes_Documents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,7 +240,6 @@ namespace Zippy.Cash.Repository.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5726),
                             CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2972),
                             Name = "CAD",
                             UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2972)
@@ -451,131 +452,6 @@ namespace Zippy.Cash.Repository.Migrations
                     b.Navigation("DocumentType");
 
                     b.Navigation("VerificationStatus");
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5965)
-                        });
-                });
-
-            modelBuilder.Entity("Zippy.Model.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-                });
-
-            modelBuilder.Entity("Zippy.Model.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ContactId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTimeOffset>("DOB")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id_adb2c")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Metadata")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Verified")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StatusId");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Zippy.Model.UserRole", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserRoles");
-                });
-
-            modelBuilder.Entity("Zippy.Model.UserStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserStatuses");
                 });
 
             modelBuilder.Entity("Zippy.Model.Region", b =>
@@ -587,54 +463,9 @@ namespace Zippy.Cash.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Zippy.Model.User", b =>
-                {
-                    b.HasOne("Zippy.Model.UserStatus", "UserStatus")
-                        .WithMany("Users")
-                        .HasForeignKey("StatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserStatus");
-                });
-
-            modelBuilder.Entity("Zippy.Model.UserRole", b =>
-                {
-                    b.HasOne("Zippy.Model.Role", "Role")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Zippy.Model.User", "User")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Zippy.Model.Country", b =>
                 {
                     b.Navigation("Regions");
-                });
-
-            modelBuilder.Entity("Zippy.Model.Role", b =>
-                {
-                    b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("Zippy.Model.User", b =>
-                {
-                    b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("Zippy.Model.UserStatus", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Zippy.Model.DocumentType", b =>

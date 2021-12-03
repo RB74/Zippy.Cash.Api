@@ -24,6 +24,16 @@ namespace Zippy.Cash.Repository
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<UserStatus> UserStatuses => Set<UserStatus>();
 
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Currency> Currencys { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<VerificationStatus> VerificationStatuses { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<Document> Documents { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("Account").HasData( new Account { CreatedOnUTC = DateTime.UtcNow, UpdatedOnUTC = DateTime.UtcNow, AccountId=Guid.NewGuid().ToString(),Id=1, OwnerId=1}) ;
