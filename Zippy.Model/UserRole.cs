@@ -14,10 +14,10 @@ namespace Zippy.Model
         public int UserId { get; set; }
         public int RoleId { get; set; }
 
-        [ForeignKey(nameof(UserId))]  
-        public User User { get; set; }
+        [ForeignKey(nameof(UserId))]
+        public User User { get; set; } = null!;
 
         [ForeignKey(nameof(RoleId))]
-        public Role Role { get; set; }
+        public Role Role { get; set; } = null!;
     }
 }

@@ -28,7 +28,7 @@ namespace Zippy.Model
         public string Metadata { get; set; } = string.Empty;
 
         [ForeignKey(nameof(StatusId))]
-        public UserStatus UserStatus { get; set; }
+        public UserStatus UserStatus { get; set; } = null!;
         public ICollection<UserRole> UserRoles { get; set; }
     }
 }

@@ -12,17 +12,18 @@ namespace Zippy.Cash.Repository
         {
 
         }
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Currency> Currencys { get; set; }
-        public DbSet<Organization> Organizations { get; set; }
-        public DbSet<Region> Regions { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<UserStatus> UserStatuses { get; set; }
+        public DbSet<Account> Accounts => Set<Account>();
+        public DbSet<Client> Clients => Set<Client>();
+        public DbSet<Country> Countries => Set<Country>();
+        public DbSet<Currency> Currencys => Set<Currency>();
+        public DbSet<Organization> Organizations => Set<Organization>();
+        public DbSet<Region> Regions => Set<Region>();
+        public DbSet<Address> Addresses => Set<Address>();
+        public DbSet<User> Users => Set<User>();
+        public DbSet<UserRole> UserRoles => Set<UserRole>();
+        public DbSet<Role> Roles => Set<Role>();
+        public DbSet<UserStatus> UserStatuses => Set<UserStatus>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("Account").HasData( new Account { CreatedOnUTC = DateTime.UtcNow, UpdatedOnUTC = DateTime.UtcNow, AccountId=Guid.NewGuid().ToString(),Id=1, OwnerId=1}) ;
