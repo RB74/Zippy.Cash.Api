@@ -10,7 +10,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zippy.Cash.API", "Zippy.Cas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zippy.Model", "Zippy.Model\Zippy.Model.csproj", "{1DD3293B-3973-4A49-AB07-1072FAB0E1AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zippy.Cash.Repository", "Zippy.Cash.Repository\Zippy.Cash.Repository.csproj", "{74841920-8E03-4CAE-B33A-20E32716D4AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zippy.Cash.Repository", "Zippy.Cash.Repository\Zippy.Cash.Repository.csproj", "{74841920-8E03-4CAE-B33A-20E32716D4AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4B855E99-EBF1-433D-9D04-095807E72A59}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

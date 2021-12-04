@@ -6,7 +6,7 @@ namespace Zippy.Model
     /// <summary>
     /// Client entity represents Merchant or Person 
     /// </summary>
-    public class Client:ZippyBase
+    public class Client : ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,16 +15,16 @@ namespace Zippy.Model
         public int OrganizationId { get; set; }
         public string FirstName { get; set; } = "John";
         public string LastName { get; set; } = "Doe";
-        public string Email { get; set; } = String.Empty;
-        public string UserToken { get; set; } = String.Empty;
-        public string Phone { get; set; } = String.Empty;
-        public string Website { get; set; } = String.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string UserToken { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Website { get; set; } = string.Empty;
         [ForeignKey("Country")]
         public int CountryId { get; set; }
         public bool IsActive { get; set; } = true;
-        public bool IsDeleted { get; set; } = false;
-        public string TaxID { get; set; } = String.Empty;
-        public string TypeOfBusiness { get; set; } = String.Empty;
-        public string PurposeOfBusiness { get; set; } = String.Empty;
+        public bool IsDeleted { get; set; }
+        public string TaxID { get; set; } = string.Empty;
+        public string TypeOfBusiness { get; set; } = string.Empty;
+        public string PurposeOfBusiness { get; set; } = string.Empty;
     }
 }

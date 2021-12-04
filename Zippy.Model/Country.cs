@@ -6,7 +6,7 @@ namespace Zippy.Model
     /// <summary>
     /// Entity represents Country
     /// </summary>
-    public class Country:ZippyBase
+    public class Country : ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
