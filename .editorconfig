@@ -1,0 +1,12 @@
+﻿[*.cs]
+dotnet_analyzer_diagnostic.severity = error
+dotnet_diagnostic.CA1707.severity = suggestion
+
+[Zippy.Cash/Program.cs]
+dotnet_diagnostic.IDE0058.severity = none
+
+[Zippy.Cash.Repository/ZippyDBContext.cs]
+dotnet_diagnostic.IDE0058.severity = none
+
+[Zippy.Cash.Repository/Migrations/*.cs]
+dotnet_analyzer_diagnostic.severity = none

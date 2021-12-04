@@ -7,15 +7,15 @@ namespace Zippy.Model
     /// Entity represents Zippy companies
     /// We can have multiple Zippys in different countries
     /// </summary>
-    public class Organization:ZippyBase
+    public class Organization : ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; } = String.Empty;
-        public string TaxID { get; set; } = String.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string TaxID { get; set; } = string.Empty;
         [ForeignKey("Country")]
         public int CountryId { get; set; }
-        public string AccountId { get; set; } = String.Empty;
+        public string AccountId { get; set; } = string.Empty;
     }
 }

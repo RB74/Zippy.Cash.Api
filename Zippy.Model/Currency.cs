@@ -6,7 +6,7 @@ namespace Zippy.Model
     /// <summary>
     /// Entity represents currency in which transactions are handled
     /// </summary>
-    public class Currency:ZippyBase
+    public class Currency : ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
