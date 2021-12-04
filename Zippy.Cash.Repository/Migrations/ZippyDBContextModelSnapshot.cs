@@ -51,10 +51,10 @@ namespace Zippy.Cash.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            AccountId = "8aef45d2-1b8d-4f20-b58c-7abaffca99ba",
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2598),
+                            AccountId = "cc9a468a-41e4-483d-b353-b83d04d8b07c",
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5331),
                             OwnerId = 1,
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2598)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5332)
                         });
                 });
 
@@ -192,16 +192,16 @@ namespace Zippy.Cash.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2850),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5643),
                             Name = "United States",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2850)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5643)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2852),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5645),
                             Name = "Canada",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2852)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5646)
                         });
                 });
 
@@ -231,77 +231,17 @@ namespace Zippy.Cash.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2969),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5725),
                             Name = "USD",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2969)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5725)
                         },
                         new
                         {
                             Id = 2,
                             CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5726),
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2972),
                             Name = "CAD",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(2972)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5727)
                         });
-                });
-
-            modelBuilder.Entity("Zippy.Model.Document", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EntityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VerificationStatusId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TypeId");
-
-                    b.HasIndex("VerificationStatusId");
-
-                    b.ToTable("Documents");
-                });
-
-            modelBuilder.Entity("Zippy.Model.DocumentType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DocumentTypes");
                 });
 
             modelBuilder.Entity("Zippy.Model.Organization", b =>
@@ -343,10 +283,10 @@ namespace Zippy.Cash.Repository.Migrations
                             Id = 1,
                             AccountId = "",
                             CountryId = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3039),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5798),
                             Name = "Zippy",
                             TaxID = "",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3039)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5798)
                         });
                 });
 
@@ -386,71 +326,27 @@ namespace Zippy.Cash.Repository.Migrations
                         {
                             Id = 1,
                             CountryId = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3131),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5961),
                             Name = "Ontario",
                             RegionCode = "001",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3131)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5961)
                         },
                         new
                         {
                             Id = 2,
                             CountryId = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3133),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5963),
                             Name = "Manitoba",
                             RegionCode = "002",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3133)
+                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5963)
                         },
                         new
                         {
                             Id = 3,
                             CountryId = 2,
-                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3135),
+                            CreatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5965),
                             Name = "Quebec",
                             RegionCode = "003",
-                            UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 52, 49, 813, DateTimeKind.Utc).AddTicks(3135)
-                        });
-                });
-
-            modelBuilder.Entity("Zippy.Model.VerificationStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOnUTC")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VerificationStatuses");
-                });
-
-            modelBuilder.Entity("Zippy.Model.Document", b =>
-                {
-                    b.HasOne("Zippy.Model.DocumentType", "DocumentType")
-                        .WithMany("Documents")
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Zippy.Model.VerificationStatus", "VerificationStatus")
-                        .WithMany("Documents")
-                        .HasForeignKey("VerificationStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DocumentType");
-
-                    b.Navigation("VerificationStatus");
                             UpdatedOnUTC = new DateTime(2021, 12, 3, 15, 19, 3, 573, DateTimeKind.Utc).AddTicks(5965)
                         });
                 });
@@ -635,16 +531,6 @@ namespace Zippy.Cash.Repository.Migrations
             modelBuilder.Entity("Zippy.Model.UserStatus", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("Zippy.Model.DocumentType", b =>
-                {
-                    b.Navigation("Documents");
-                });
-
-            modelBuilder.Entity("Zippy.Model.VerificationStatus", b =>
-                {
-                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }
