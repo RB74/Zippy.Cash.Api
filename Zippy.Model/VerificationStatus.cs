@@ -4,14 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Zippy.Model
 {
     /// <summary>
-    /// Entity represents currency in which transactions are handled
+    /// Entity represents Verification Status, Values are pending, accepted or rejected
     /// </summary>
-    public class Currency : ZippyBase
+    public class VerificationStatus : ZippyBase
     {
+        public VerificationStatus()
+        {
+            Documents = new List<Document>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; } = string.Empty;
+        public ICollection<Document> Documents { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace Zippy.Model
     /// <summary>
     /// Account entity
     /// </summary>
-    public class Account:ZippyBase
+    public class Account : ZippyBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

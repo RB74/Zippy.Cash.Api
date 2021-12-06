@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zippy.Cash.Repository.Abstract;
 using Zippy.Model;
 
@@ -22,7 +17,7 @@ namespace Zippy.Cash.Repository.Concrete
         /// <returns></returns>
         public async Task<IEnumerable<Region>> GetRegions()
         {
-            var result = await _dbContext.Regions.ToListAsync();
+            List<Region> result = await _dbContext.Regions.ToListAsync();
             return result;
         }
     }

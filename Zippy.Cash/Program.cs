@@ -9,7 +9,7 @@ using Zippy.Cash.Repository.Abstract;
 using Zippy.Cash.Repository.Concrete;
 using WebApplication = Microsoft.AspNetCore.Builder.WebApplication;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 // Add services to the container.
 builder.Services.AddControllers();
@@ -34,7 +34,7 @@ builder.Services
                     tenantId: "d0c1aedf-ff82-46fd-890a-3100c16e14ab",
                     clientId: "0f2b00c3-dc2e-4ce6-ab2b-f4830c77a432",
                     clientSecret: "69u7Q~2JZgVzttFwb2gNgIjDnPBuKwCPg1HMo")),
-                new string[] { })
+                Array.Empty<string>())
        .AddInMemoryTokenCaches();
 
 builder.Services.AddDbContext<ZippyDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ZippyDB"), assembly => assembly.MigrationsAssembly(typeof(ZippyDBContext).Assembly.FullName)));
@@ -43,7 +43,7 @@ builder.Services.AddSwaggerGen();
 //DI
 builder.Services.AddScoped<IRegionRepository, RegionRepository>();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
