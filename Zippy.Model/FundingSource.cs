@@ -35,6 +35,6 @@ namespace Zippy.Model
         public ICollection<ProcessingChannel> ProcessingChannels { get; set; }
 
         [ForeignKey(nameof(CardDetailId))]
-        public CardDetail CardDetail { get; set; }
+        public CardDetail CardDetail { get; set; } = null!;
     }
 }
