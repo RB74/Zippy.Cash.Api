@@ -23,6 +23,11 @@ namespace Zippy.Cash.Repository
         public DbSet<UserRole> UserRoles => Set<UserRole>();
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<UserStatus> UserStatuses => Set<UserStatus>();
+        public DbSet<CardDetail> CardDetails => Set<CardDetail>();
+        public DbSet<FundingSource> FundingSources => Set<FundingSource>();
+        public DbSet<ProcessingChannel> ProcessingChannels => Set<ProcessingChannel>();
+        public DbSet<ProcessingChannelType> ProcessingChannelTypes => Set<ProcessingChannelType>();
+
         public DbSet<VerificationStatus> VerificationStatuses => Set<VerificationStatus>();
         public DbSet<DocumentType> DocumentTypes => Set<DocumentType>();
         public DbSet<Document> Documents => Set<Document>();
