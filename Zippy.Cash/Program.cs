@@ -42,6 +42,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //DI
 builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 WebApplication app = builder.Build();
 // Configure the HTTP request pipeline.
